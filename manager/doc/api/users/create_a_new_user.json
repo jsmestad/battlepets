@@ -30,7 +30,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"user\": {\n    \"id\": \"1\",\n    \"email\": \"my_user@gmail.example\"\n  }\n}",
+      "response_body": "{\n  \"user\": {\n    \"id\": \"1\",\n    \"email\": \"my_user@gmail.example\",\n    \"battlebots\": [\n\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

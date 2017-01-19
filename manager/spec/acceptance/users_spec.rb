@@ -6,6 +6,8 @@ resource 'Users' do
     header "Accept", "application/json"
   end
 
+  let(:existing_user) { FactoryGirl.create(:user, :with_battlebots, battlebots_count: 2) }
+
   get '/users' do
     context 'with no users existing' do
       example_request "Listing Users", document: false do
@@ -30,6 +32,31 @@ resource 'Users' do
     end
   end
 
+  get '/users/:id' do
+    context 'when not found' do
+      let(:id) { 'doesnt-exist' }
+
+      example_request 'returns not found', document: false do
+        expect(status).to eql(404)
+      end
+    end
+
+    let(:id) { existing_user.id }
+
+    example_request 'Fetching User Information' do
+      expect(status).to eql(200)
+
+      payload = JSON.parse(response_body)
+      expect(payload).to have_key('user')
+
+      response_hash = payload['user']
+      expect(response_hash).to have_key('id')
+      expect(response_hash).to have_key('email')
+      expect(response_hash).to have_key('battlebots')
+      expect(response_hash['battlebots'].length).to eql(2)
+    end
+  end
+
   post '/users' do
     parameter :email, 'Email address for the user', required: true, scope: 'user'
 
@@ -47,7 +74,6 @@ resource 'Users' do
     end
 
     context 'returning an error' do
-      let!(:existing_user) { FactoryGirl.create(:user) }
 
       let(:email) { existing_user.email }
 
