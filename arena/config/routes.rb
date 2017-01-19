@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :contests, only: [:index]
+  resources :contests, only: [:index, :create]
 end

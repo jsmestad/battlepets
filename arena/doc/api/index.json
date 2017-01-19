@@ -5,6 +5,13 @@
       "explanation": null,
       "examples": [
         {
+          "description": "Create a new contest",
+          "link": "contests/create_a_new_contest.json",
+          "groups": "all",
+          "route": "/contests",
+          "method": "post"
+        },
+        {
           "description": "Listing Contests",
           "link": "contests/listing_contests.json",
           "groups": "all",
