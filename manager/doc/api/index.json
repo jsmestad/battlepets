@@ -1,0 +1,72 @@
+{
+  "resources": [
+    {
+      "name": "Battlebots",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Create a new battlebot",
+          "link": "battlebots/create_a_new_battlebot.json",
+          "groups": "all",
+          "route": "/battlebots",
+          "method": "post"
+        },
+        {
+          "description": "Creating a duplicate battlebot returns an error",
+          "link": "battlebots/creating_a_duplicate_battlebot_returns_an_error.json",
+          "groups": "all",
+          "route": "/battlebots",
+          "method": "post"
+        },
+        {
+          "description": "Listing Battlebots",
+          "link": "battlebots/listing_battlebots.json",
+          "groups": "all",
+          "route": "/battlebots",
+          "method": "get"
+        },
+        {
+          "description": "Listing Battlebots",
+          "link": "battlebots/listing_battlebots.json",
+          "groups": "all",
+          "route": "/battlebots",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Create a new user",
+          "link": "users/create_a_new_user.json",
+          "groups": "all",
+          "route": "/users",
+          "method": "post"
+        },
+        {
+          "description": "Creating a duplicate user returns an error",
+          "link": "users/creating_a_duplicate_user_returns_an_error.json",
+          "groups": "all",
+          "route": "/users",
+          "method": "post"
+        },
+        {
+          "description": "Listing Users",
+          "link": "users/listing_users.json",
+          "groups": "all",
+          "route": "/users",
+          "method": "get"
+        },
+        {
+          "description": "Listing Users",
+          "link": "users/listing_users.json",
+          "groups": "all",
+          "route": "/users",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}
