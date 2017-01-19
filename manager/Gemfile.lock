@@ -134,6 +134,8 @@ GEM
       activesupport (>= 3.0.0)
       mustache (~> 1.0, >= 0.99.4)
       rspec (~> 3.0)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -169,6 +171,7 @@ DEPENDENCIES
   rails (~> 5.0.1)
   rspec-rails
   rspec_api_documentation
+  shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
