@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "name": "Contests",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Listing Contests",
+          "link": "contests/listing_contests.json",
+          "groups": "all",
+          "route": "/contests",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

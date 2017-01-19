@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 resource 'Contests' do
+  before do
+    header "Content-Type", "application/json"
+    header "Accept", "application/json"
+  end
 
   get '/contests' do
     example_request "Listing Contests" do
