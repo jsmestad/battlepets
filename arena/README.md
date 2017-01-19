@@ -1,24 +1,39 @@
-# README
+# BattlePets Arena
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**TODO** Description of the application
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* SQLite (or change the `config/database.yml` to a different driver)
 
-* System dependencies
+## Getting Started
 
-* Configuration
+### Up and Running
 
-* Database creation
+Assuming you've cloned the repo and are in the working directory:
 
-* Database initialization
+```
+bundle install
+bundle exec rake db:create db:migrate db:test:prepare
+bundle exec rspec
+```
 
-* How to run the test suite
+Assuming everything went well, the output should be a passing spec suite stating
+no failures:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+17 examples, 0 failures
+```
 
-* Deployment instructions
+### Viewing API Docs
 
-* ...
+Run the following commands:
+
+```
+bundle exec rails s
+```
+
+Visit [/api/docs](http://localhost:3000/api/docs) to view the API documentation
+
+
+
