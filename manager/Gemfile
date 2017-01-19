@@ -16,11 +16,14 @@ gem 'active_model_serializers', '~> 0.10.4'
 
 gem 'pry-rails'
 
+gem 'apitome'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
   gem 'rspec-rails'
+  gem 'rspec_api_documentation'
 end
 
 group :development do
@@ -35,7 +38,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :test do
   gem 'factory_girl_rails'
-  gem 'rspec_api_documentation'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
 end

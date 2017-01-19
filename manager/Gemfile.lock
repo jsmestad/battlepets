@@ -43,6 +43,10 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    apitome (0.1.0)
+      kramdown
+      railties
+      rspec_api_documentation
     arel (7.1.4)
     builder (3.2.3)
     byebug (9.0.6)
@@ -67,6 +71,7 @@ GEM
       jsonapi-renderer (= 0.1.1.beta1)
     jsonapi-parser (0.1.1.beta3)
     jsonapi-renderer (0.1.1.beta1)
+    kramdown (1.13.2)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -175,6 +180,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.4)
+  apitome
   byebug
   database_cleaner
   factory_girl_rails
