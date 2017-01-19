@@ -53,6 +53,13 @@
           "method": "post"
         },
         {
+          "description": "Fetching User Information",
+          "link": "users/fetching_user_information.json",
+          "groups": "all",
+          "route": "/users/:id",
+          "method": "get"
+        },
+        {
           "description": "Listing Users",
           "link": "users/listing_users.json",
           "groups": "all",
@@ -64,6 +71,13 @@
           "link": "users/listing_users.json",
           "groups": "all",
           "route": "/users",
+          "method": "get"
+        },
+        {
+          "description": "returns not found",
+          "link": "users/returns_not_found.json",
+          "groups": "all",
+          "route": "/users/:id",
           "method": "get"
         }
       ]

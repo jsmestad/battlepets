@@ -12,4 +12,8 @@ class ApplicationController < ActionController::API
     end
     render json: {errors: errors}, status: :bad_request
   end
+
+  rescue_from ActiveRecord::RecordNotFound do |e|
+    head :not_found
+  end
 end
