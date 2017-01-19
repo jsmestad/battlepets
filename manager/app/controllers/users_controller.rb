@@ -4,4 +4,20 @@ class UsersController < ApplicationController
     @users = User.all
     render json: @users
   end
+
+  def create
+    @user = User.create(user_params)
+
+    if @user.persisted?
+      render json: @user, status: :created
+    else
+      render json: {errors: @user.errors.messages}, status: :bad_request
+    end
+  end
+
+private
+
+  def user_params
+    params.require(:user).permit(:email)
+  end
 end
