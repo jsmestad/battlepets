@@ -23,6 +23,20 @@ RSpec.describe Contest, type: :model do
     end
   end
 
+  describe '#winner=' do
+    it 'accepts either :defendant or :challenger' do
+      expect(contest).to receive(:defendant_wins)
+      contest.winner = :defendant
+
+      expect(contest).to receive(:challenger_wins)
+      contest.winner = :challenger
+    end
+
+    it 'rejects other values' do
+      expect { contest.winner = :foobar }.to_not change { contest.who_won? }
+    end
+  end
+
   describe '#winner' do
     it 'returns the winners data' do
       expect {

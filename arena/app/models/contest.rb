@@ -16,6 +16,17 @@ class Contest < ActiveRecord::Base
     end
   end
 
+  def winner=(val)
+    case val
+    when :challenger
+      challenger_wins
+    when :defendant
+      defendant_wins
+    else
+      false
+    end
+  end
+
   def defendant_wins
     self.winning_value = 1
   end
