@@ -42,6 +42,8 @@ resource 'Contests' do
 
       response_hash = payload['contest']
       expect(response_hash['id']).to match(/\d+/)
+      expect(response_hash).to have_key('winner')
+      expect(response_hash['winner']).to eql(nil)
       expect(response_hash['defendant']['id']).to eql(defendant_id)
       expect(response_hash['defendant']['name']).to eql(defendant_name)
 
