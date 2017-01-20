@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120000506) do
+ActiveRecord::Schema.define(version: 20170120010227) do
 
   create_table "contests", force: :cascade do |t|
     t.text     "challenger"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170120000506) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "winning_value", default: -1
+    t.string   "style"
   end
 
 end

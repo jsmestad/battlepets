@@ -7,6 +7,12 @@
   "explanation": null,
   "parameters": [
     {
+      "required": true,
+      "scope": "contest",
+      "name": "style",
+      "description": "The style of contest. Available contests are 'FairFight'"
+    },
+    {
       "scope": [
         "contest",
         "challenger"
@@ -54,7 +60,7 @@
     {
       "request_method": "POST",
       "request_path": "/contests",
-      "request_body": "{\"contest\":{\"challenger\":{\"id\":\"1\",\"name\":\"The Ultimatum\"},\"defendant\":{\"id\":\"2\",\"name\":\"Defender of Worlds\"}}}",
+      "request_body": "{\"contest\":{\"style\":\"FairFight\",\"challenger\":{\"id\":\"1\",\"name\":\"The Ultimatum\"},\"defendant\":{\"id\":\"2\",\"name\":\"Defender of Worlds\"}}}",
       "request_headers": {
         "Content-Type": "application/json",
         "Accept": "application/json"
@@ -64,7 +70,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"contest\": {\n    \"id\": \"1\",\n    \"defendant\": {\n      \"id\": \"2\",\n      \"name\": \"Defender of Worlds\"\n    },\n    \"challenger\": {\n      \"id\": \"1\",\n      \"name\": \"The Ultimatum\"\n    },\n    \"winner\": null\n  }\n}",
+      "response_body": "{\n  \"contest\": {\n    \"id\": \"1\",\n    \"defendant\": {\n      \"id\": \"2\",\n      \"name\": \"Defender of Worlds\"\n    },\n    \"challenger\": {\n      \"id\": \"1\",\n      \"name\": \"The Ultimatum\"\n    },\n    \"winner\": null,\n    \"style\": \"FairFight\"\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
