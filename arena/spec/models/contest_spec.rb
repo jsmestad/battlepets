@@ -48,4 +48,8 @@ RSpec.describe Contest, type: :model do
       }.to change { contest.winner }.to(challenger)
     end
   end
+
+  describe 'style of contest' do
+    it { is_expected.to validate_inclusion_of(:winning_value).in_array(['FairFight']) }
+  end
 end

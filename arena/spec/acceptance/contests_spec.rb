@@ -66,6 +66,9 @@ resource 'Contests' do
   end
 
   post '/contests' do
+
+    parameter :style, "The style of contest. Available contests are 'FairFight'", required: true, scope: :contest
+
     with_options scope: [:contest, :challenger], required: true do
       parameter :id, 'The name for the challenging battlebot', method: :challenger_id
       parameter :name, 'The name for the challenging battlebot', method: :challenger_name
@@ -75,6 +78,8 @@ resource 'Contests' do
       parameter :id, 'The name for the defending battlebot', method: :defendant_id
       parameter :name, 'The name for the defending battlebot', method: :defendant_name
     end
+
+    let(:style) { 'FairFight' }
 
     let(:challenger_id) { '1' }
     let(:challenger_name) { 'The Ultimatum' }
@@ -92,6 +97,7 @@ resource 'Contests' do
       expect(response_hash['id']).to match(/\d+/)
       expect(response_hash).to have_key('winner')
       expect(response_hash['winner']).to eql(nil)
+      expect(response_hash['style']).to eql('FairFight')
       expect(response_hash['defendant']['id']).to eql(defendant_id)
       expect(response_hash['defendant']['name']).to eql(defendant_name)
 

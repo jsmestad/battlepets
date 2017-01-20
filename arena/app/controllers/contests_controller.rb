@@ -23,7 +23,7 @@ class ContestsController < ApplicationController
 private
 
   def contest_params
-    params.require(:contest).permit(defendant: [:id, :name], challenger: [:id, :name])
+    params.require(:contest).permit(:style, defendant: [:id, :name], challenger: [:id, :name])
   end
 
 end

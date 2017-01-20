@@ -1,5 +1,5 @@
 class ContestSerializer < ActiveModel::Serializer
-  attributes :id, :defendant, :challenger, :winner
+  attributes :id, :defendant, :challenger, :winner, :style
 
   def id
     object.id.to_s

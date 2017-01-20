@@ -4,6 +4,7 @@ class Contest < ActiveRecord::Base
 
   validates_presence_of :challenger, :defendant
   validates_inclusion_of :winning_value, in: [-1, 0, 1]
+  validates_inclusion_of :style, in: %w(FairFight)
 
   def who_won?
     case winning_value
