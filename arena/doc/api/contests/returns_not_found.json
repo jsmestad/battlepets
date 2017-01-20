@@ -1,0 +1,37 @@
+{
+  "resource": "Contests",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/contests/:id",
+  "description": "returns not found",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/contests/doesnt-exist?document=false",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      "request_query_parameters": {
+        "document": "false"
+      },
+      "request_content_type": "application/json",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": null,
+      "response_headers": {
+        "Content-Type": "application/json"
+      },
+      "response_content_type": "application/json",
+      "curl": null
+    }
+  ]
+}
