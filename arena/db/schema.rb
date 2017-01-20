@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119230936) do
+ActiveRecord::Schema.define(version: 20170120000506) do
 
   create_table "contests", force: :cascade do |t|
     t.text     "challenger"
     t.text     "defendant"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "winning_value", default: -1
   end
 
 end
