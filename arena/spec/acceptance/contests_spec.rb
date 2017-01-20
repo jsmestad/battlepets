@@ -88,6 +88,7 @@ resource 'Contests' do
     let(:defendant_name) { 'Defender of Worlds' }
 
     example_request 'Create a new contest' do
+      expect(BattleJob).to receive(:perform_later)
       expect(status).to eql(201)
 
       payload = JSON.parse(response_body)
