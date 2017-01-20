@@ -29,5 +29,5 @@ This application creates contests between two BattlePets supplied by the user.
 
 ### Contest Types
 
-TBD
+* `FairFight` - means both challenger and defendant are equals. It is a total toss up!
 
