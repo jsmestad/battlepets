@@ -14,6 +14,7 @@ class ContestsController < ApplicationController
     @contest = Contest.create(contest_params)
 
     if @contest.persisted?
+      BattleJob.perform_later(@contest)
       render json: @contest, status: :created
     else
       render json: {errors: @contest.errors.messages}, status: :bad_request
@@ -23,7 +24,7 @@ class ContestsController < ApplicationController
 private
 
   def contest_params
-    params.require(:contest).permit(defendant: [:id, :name], challenger: [:id, :name])
+    params.require(:contest).permit(:style, defendant: [:id, :name], challenger: [:id, :name])
   end
 
 end

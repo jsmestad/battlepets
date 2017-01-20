@@ -7,5 +7,7 @@ FactoryGirl.define do
     defendant do
       { id: '2', name: 'Defender' }
     end
+
+    style 'FairFight'
   end
 end
