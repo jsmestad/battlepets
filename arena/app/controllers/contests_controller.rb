@@ -5,6 +5,11 @@ class ContestsController < ApplicationController
     render json: @contests
   end
 
+  def show
+    @contest = Contest.find(params[:id])
+    render json: @contest
+  end
+
   def create
     @contest = Contest.create(contest_params)
 

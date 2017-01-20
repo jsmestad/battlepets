@@ -6,7 +6,7 @@ class ContestSerializer < ActiveModel::Serializer
   end
 
   def winner
-    if winner = object.winner
+    if winner = object.who_won?
       winner.to_s
     else
       nil

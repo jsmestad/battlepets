@@ -6,6 +6,14 @@ resource 'Contests' do
     header "Accept", "application/json"
   end
 
+  let(:pending_contest) { FactoryGirl.create(:contest) }
+  let(:finished_contest) do
+    FactoryGirl.create(:contest).tap do |c|
+      c.defendant_wins
+      c.save
+    end
+  end
+
   get '/contests' do
     example_request "Listing Contests" do
       expect(status).to eql(200)
@@ -16,8 +24,48 @@ resource 'Contests' do
     end
   end
 
-  post '/contests' do
+  get '/contests/:id' do
+    context 'when not found' do
+      let(:id) { 'doesnt-exist' }
 
+      example_request 'returns not found', document: false do
+        expect(status).to eql(404)
+      end
+    end
+
+    let(:id) { pending_contest.id }
+
+    example_request 'Fetching an Pending Contest' do
+      expect(status).to eql(200)
+
+      payload = JSON.parse(response_body)
+      expect(payload).to have_key('contest')
+
+      response_hash = payload['contest']
+      expect(response_hash['id']).to match(/\d+/)
+      expect(response_hash).to have_key('winner')
+      expect(response_hash['winner']).to eql(nil)
+    end
+
+    describe 'finished contest' do
+
+      let(:id) { finished_contest.id }
+
+      example_request 'Fetching an Completed Contest' do
+        expect(status).to eql(200)
+
+        payload = JSON.parse(response_body)
+        expect(payload).to have_key('contest')
+
+        response_hash = payload['contest']
+        expect(response_hash['id']).to match(/\d+/)
+        expect(response_hash).to have_key('winner')
+        expect(response_hash['winner']).to eql('defendant')
+      end
+    end
+  end
+
+  post '/contests' do
     with_options scope: [:contest, :challenger], required: true do
       parameter :id, 'The name for the challenging battlebot', method: :challenger_id
       parameter :name, 'The name for the challenging battlebot', method: :challenger_name
