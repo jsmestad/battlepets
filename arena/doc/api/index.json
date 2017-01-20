@@ -12,10 +12,31 @@
           "method": "post"
         },
         {
+          "description": "Fetching an Completed Contest",
+          "link": "contests/fetching_an_completed_contest.json",
+          "groups": "all",
+          "route": "/contests/:id",
+          "method": "get"
+        },
+        {
+          "description": "Fetching an Pending Contest",
+          "link": "contests/fetching_an_pending_contest.json",
+          "groups": "all",
+          "route": "/contests/:id",
+          "method": "get"
+        },
+        {
           "description": "Listing Contests",
           "link": "contests/listing_contests.json",
           "groups": "all",
           "route": "/contests",
+          "method": "get"
+        },
+        {
+          "description": "returns not found",
+          "link": "contests/returns_not_found.json",
+          "groups": "all",
+          "route": "/contests/:id",
           "method": "get"
         }
       ]
